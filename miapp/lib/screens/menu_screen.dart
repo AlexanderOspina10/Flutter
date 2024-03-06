@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:miapp/screens/array_screen.dart';
+import 'package:miapp/screens/login_screen.dart';
 import 'package:miapp/screens/mapas_screen.dart';
 import 'package:miapp/screens/mision_screen.dart';
 import 'package:miapp/screens/productos_screen.dart';
@@ -80,8 +81,7 @@ class _MenuScreenState extends State<MenuScreen> {
           ListTile(
             title: const Text('Array'),
             subtitle: const Text('Listar datos Array'),
-            leading:
-                const Icon(Icons.list_alt_rounded, color: Colors.teal),
+            leading: const Icon(Icons.list_alt_rounded, color: Colors.teal),
             trailing:
                 const Icon(Icons.navigate_next_outlined, color: Colors.teal),
             onTap: () {
@@ -94,8 +94,7 @@ class _MenuScreenState extends State<MenuScreen> {
           ListTile(
             title: const Text('Mapa'),
             subtitle: const Text('Listar datos Mapa'),
-            leading:
-                const Icon(Icons.maps_ugc_sharp, color: Colors.teal),
+            leading: const Icon(Icons.maps_ugc_sharp, color: Colors.teal),
             trailing:
                 const Icon(Icons.navigate_next_outlined, color: Colors.teal),
             onTap: () {
@@ -108,14 +107,26 @@ class _MenuScreenState extends State<MenuScreen> {
           ListTile(
             title: const Text('Rectangulo'),
             subtitle: const Text('Area y perimetro rectangulo'),
-            leading:
-                const Icon(Icons.maps_ugc_sharp, color: Colors.teal),
+            leading: const Icon(Icons.maps_ugc_sharp, color: Colors.teal),
+            trailing:
+                const Icon(Icons.navigate_next_outlined, color: Colors.teal),
+            onTap: () {
+              //ABRIR OTRO SCREEN
+              final route = MaterialPageRoute(
+                  builder: (context) => const RectanguloScreen());
+              Navigator.push(context, route);
+            },
+          ),
+          ListTile(
+            title: const Text('Login'),
+            subtitle: const Text('Acceso a la aplicación'),
+            leading: const Icon(Icons.maps_ugc_sharp, color: Colors.teal),
             trailing:
                 const Icon(Icons.navigate_next_outlined, color: Colors.teal),
             onTap: () {
               //ABRIR OTRO SCREEN
               final route =
-                  MaterialPageRoute(builder: (context) => const RectanguloScreen());
+                  MaterialPageRoute(builder: (context) => const LoginScreen());
               Navigator.push(context, route);
             },
           ),
